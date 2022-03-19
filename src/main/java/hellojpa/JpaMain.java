@@ -41,11 +41,11 @@ public class JpaMain {
             List<Member> memberResult = em.createQuery("select m from Member m",
                 Member.class).getResultList();
             for (Member member : memberResult) {
-                System.out.println("member.getName() = " + member.getName());
+                System.out.println("member.getUsername() = " + member.getUsername());
             }
             tx.commit();
         } catch (Exception e) {
-            e.printStackTrace();
+            tx.rollback();
         } finally {
             em.close();
         }
