@@ -11,7 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-@Entity
+@Entity(name = "CUSTOMER")
 public class Member {
 
     @Id
